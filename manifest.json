@@ -1,0 +1,13 @@
+{
+  "name": "Soup.io",
+  "version": "0.1",
+  "description": "For now this just wraps the Soup.io bookmarklet in a Chrome extension.",
+  "browser_action": {
+    "default_icon": "soup.png",
+    "default_title": "Share on Soup.io"
+  },
+  "background_page": "background.html",
+  "permissions": [
+    "tabs", "http://*/*"
+  ]
+}
