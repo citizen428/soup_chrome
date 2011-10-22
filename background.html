@@ -1,7 +1,15 @@
 <html>
-  <script>
+    <script>
     chrome.browserAction.onClicked.addListener(function(tab) {
-      chrome.tabs.executeScript(null, {file:"popup.js"});
+        chrome.tabs.executeScript(null, {file:"popup.js"});
     });
-  </script>
+
+
+    chrome.extension.onRequest.addListener(
+        function(request, sender, sendResponse) {
+            if (request.name == 'openPopUp') {
+                chrome.tabs.executeScript(null, {file:"popup.js"});
+            }
+        });
+</script>
 </html>
